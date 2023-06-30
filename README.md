@@ -1,3 +1,5 @@
 # NxTaskbar
 Windows 10 Start Orb and Taskbar Customize (Coming Soon)
-![StartChanger](https://github.com/NettixCode/NxTaskbar/assets/20787864/3f8d96d3-5916-4417-a8f8-8a721f902cd7)
+80% Done .. i will upload the source when it done 100%.
+
+![StartChanger](https://user-images.githubusercontent.com/20787864/250178224-a6bf3c23-dd92-4f93-b973-b935f721eec0.gif)
