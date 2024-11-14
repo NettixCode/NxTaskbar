@@ -1,0 +1,408 @@
+
+--------------------------------2023/7/9 4:23:53--------------------------------
+FastMM has detected an attempt to call a virtual method on a freed object. An access violation will now be raised in order to abort the current operation.
+
+Freed object class: TNamespace
+
+Virtual method: Offset +200
+
+Virtual method address: 1C49ED0
+
+The allocation number was: 497150
+
+The object was allocated by thread 0x504, and the stack trace (return addresses) at the time was:
+179710E [System.pas][System][@GetMem$qqri][4843]
+1798D93 [System.pas][System][TObject.NewInstance][17861]
+17994CE [System.pas][System][@ClassCreate$qqrpvzc][19251]
+1C4506A [MPShellUtilities.pas][MPShellUtilities][TNamespace.Create][3580]
+1C7A1EF [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.EnumerateFolderCallback][5218]
+721B402F [Unknown function at SHGetKnownFolderItem]
+1C472FE [MPShellUtilities.pas][MPShellUtilities][TNamespace.EnumerateFolderEx][4382]
+1C7A42D [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.ExpandNamespaceFolder][5277]
+1C7C61B [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.RebuildRootNamespace][6245]
+1C79C86 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoUpdating][5016]
+1C84B3F [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.RebuildRootNamespace][9963]
+
+The object was subsequently freed by thread 0x504, and the stack trace (return addresses) at the time was:
+179712A [System.pas][System][@FreeMem$qqrpv][4891]
+1798DB1 [System.pas][System][TObject.FreeInstance][17870]
+18418CC [madExcept][InterceptClassDestroy$qqrp14System.TObject]
+1C457D0 [MPShellUtilities.pas][MPShellUtilities][TNamespace.Destroy][3720]
+1798EA7 [System.pas][System][TObject.Free][17933]
+1C781D8 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoFreeNode][4275]
+1C1112B [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteNode][18245]
+1C10C4C [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteChildren][18130]
+1C101DC [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.Clear][17850]
+1C765CF [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Clear][3551]
+1C77029 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Destroy][3850]
+
+The current thread ID is 0x504, and the stack trace (return addresses) leading to this error is:
+1C79B3A [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoShellExecute][4975]
+1C847EE [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.DoShellExecute][9880]
+1C128F9 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.GetFirstSelected][19011]
+1C7FD85 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.WMLButtonDblClk][7704]
+196AFC5 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.WndProc][7480]
+1BC0AC9 [VirtualTrees.Header.pas][VirtualTrees.Header][Header.TVTHeader.HandleMessage][1574]
+1B37279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+196FF1C [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.WndProc][10424]
+1C0EF95 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.WndProc][17336]
+1B37279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+1B37279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+
+Current memory dump of 256 bytes starting at pointer address 7FDBAA60:
+84 DC CB 01 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 D2 E8 12 E9 00 00 00 00 61 9F DB 7F
+„  Ü  Ë  .  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  Ò  è  .  é  .  .  .  .  a  Ÿ  Û  
+
+--------------------------------2023/7/9 4:24:57--------------------------------
+FastMM has detected an attempt to call a virtual method on a freed object. An access violation will now be raised in order to abort the current operation.
+
+Freed object class: TNamespace
+
+Virtual method: Offset +200
+
+Virtual method address: 1D09ED0
+
+The allocation number was: 92655
+
+The object was allocated by thread 0x1558, and the stack trace (return addresses) at the time was:
+185710E [System.pas][System][@GetMem$qqri][4843]
+1858D93 [System.pas][System][TObject.NewInstance][17861]
+18594CE [System.pas][System][@ClassCreate$qqrpvzc][19251]
+1D0506A [MPShellUtilities.pas][MPShellUtilities][TNamespace.Create][3580]
+1D3A1EF [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.EnumerateFolderCallback][5218]
+721B402F [Unknown function at SHGetKnownFolderItem]
+1D072FE [MPShellUtilities.pas][MPShellUtilities][TNamespace.EnumerateFolderEx][4382]
+1D3A42D [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.ExpandNamespaceFolder][5277]
+1D3C61B [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.RebuildRootNamespace][6245]
+1D39C86 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoUpdating][5016]
+1D44B3F [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.RebuildRootNamespace][9963]
+
+The object was subsequently freed by thread 0x1558, and the stack trace (return addresses) at the time was:
+185712A [System.pas][System][@FreeMem$qqrpv][4891]
+1858DB1 [System.pas][System][TObject.FreeInstance][17870]
+19018CC [madExcept][InterceptClassDestroy$qqrp14System.TObject]
+1D057D0 [MPShellUtilities.pas][MPShellUtilities][TNamespace.Destroy][3720]
+1858EA7 [System.pas][System][TObject.Free][17933]
+1D381D8 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoFreeNode][4275]
+1CD112B [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteNode][18245]
+1CD0C4C [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteChildren][18130]
+1CD01DC [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.Clear][17850]
+1D365CF [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Clear][3551]
+1D37029 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Destroy][3850]
+
+The current thread ID is 0x1558, and the stack trace (return addresses) leading to this error is:
+1D39B3A [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoShellExecute][4975]
+1D447EE [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.DoShellExecute][9880]
+1CD28F9 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.GetFirstSelected][19011]
+1D3FD85 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.WMLButtonDblClk][7704]
+1A2AFC5 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.WndProc][7480]
+1C80AC9 [VirtualTrees.Header.pas][VirtualTrees.Header][Header.TVTHeader.HandleMessage][1574]
+1BF7279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+1A2FF1C [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.WndProc][10424]
+1CCEF95 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.WndProc][17336]
+1BF7279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+1BF7279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+
+Current memory dump of 256 bytes starting at pointer address 7FDB9E60:
+84 DC D7 01 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 39 00 11 E8 00 00 00 00 E1 C7 DB 7F
+„  Ü  ×  .  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  9  .  .  è  .  .  .  .  á  Ç  Û  
+
+--------------------------------2023/7/9 12:57:33--------------------------------
+FastMM has detected an attempt to call a virtual method on a freed object. An access violation will now be raised in order to abort the current operation.
+
+Freed object class: TNamespace
+
+Virtual method: Offset +200
+
+Virtual method address: 1B9950C
+
+The allocation number was: 194516
+
+The object was allocated by thread 0x119C, and the stack trace (return addresses) at the time was:
+176710E [System.pas][System][@GetMem$qqri][4843]
+1768D93 [System.pas][System][TObject.NewInstance][17861]
+17694CE [System.pas][System][@ClassCreate$qqrpvzc][19251]
+1B946A6 [MPShellUtilities.pas][MPShellUtilities][TNamespace.Create][3580]
+1C4A1EF [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.EnumerateFolderCallback][5218]
+7232402F [Unknown function at SHGetKnownFolderItem]
+1B9693A [MPShellUtilities.pas][MPShellUtilities][TNamespace.EnumerateFolderEx][4382]
+1C4A42D [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.ExpandNamespaceFolder][5277]
+1C4C61B [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.RebuildRootNamespace][6245]
+1C0DB53 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.Loaded][15207]
+1C54B3F [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.RebuildRootNamespace][9963]
+
+The object was subsequently freed by thread 0x119C, and the stack trace (return addresses) at the time was:
+176712A [System.pas][System][@FreeMem$qqrpv][4891]
+1768DB1 [System.pas][System][TObject.FreeInstance][17870]
+18118CC [madExcept][InterceptClassDestroy$qqrp14System.TObject]
+1B94E0C [MPShellUtilities.pas][MPShellUtilities][TNamespace.Destroy][3720]
+1768EA7 [System.pas][System][TObject.Free][17933]
+1C481D8 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoFreeNode][4275]
+1C14843 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteNode][18245]
+1C14364 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteChildren][18130]
+1C138F4 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.Clear][17850]
+1C465CF [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Clear][3551]
+1C47029 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Destroy][3850]
+
+The current thread ID is 0x119C, and the stack trace (return addresses) leading to this error is:
+1C49B3A [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoShellExecute][4975]
+1C547EE [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.DoShellExecute][9880]
+1C16011 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.GetFirstSelected][19011]
+1C4FD85 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.WMLButtonDblClk][7704]
+193AFC5 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.WndProc][7480]
+1BC501D [VirtualTrees.Header.pas][VirtualTrees.Header][Header.TVTHeader.HandleMessage][1574]
+1B07279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+193FF1C [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.WndProc][10424]
+1C126AD [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.WndProc][17336]
+1B07279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+1B07279 [acSBUtils][TacMainWnd.CallPrevWndProc]
+
+Current memory dump of 256 bytes starting at pointer address 7FDBD460:
+84 DC C8 01 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 C7 86 5C E9 00 00 00 00 40 69 DB 7F
+„  Ü  È  .  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  Ç  †  \  é  .  .  .  .  @  i  Û  
+
+--------------------------------2023/7/11 19:00:35--------------------------------
+FastMM has detected an attempt to call a virtual method on a freed object. An access violation will now be raised in order to abort the current operation.
+
+Freed object class: TNamespace
+
+Virtual method: Offset +200
+
+Virtual method address: 1D9C538
+
+The allocation number was: 9156
+
+The object was allocated by thread 0x18A0, and the stack trace (return addresses) at the time was:
+182710E [System.pas][System][@GetMem$qqri][4843]
+1828D93 [System.pas][System][TObject.NewInstance][17861]
+18294CE [System.pas][System][@ClassCreate$qqrpvzc][19251]
+1D976D2 [MPShellUtilities.pas][MPShellUtilities][TNamespace.Create][3580]
+1DCC857 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.EnumerateFolderCallback][5218]
+7244402F [Unknown function at SHGetKnownFolderItem]
+1D99966 [MPShellUtilities.pas][MPShellUtilities][TNamespace.EnumerateFolderEx][4382]
+1DCCA95 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.ExpandNamespaceFolder][5277]
+1DCEC83 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.RebuildRootNamespace][6245]
+1D5CAA3 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.Loaded][15207]
+1DD71A7 [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.RebuildRootNamespace][9963]
+
+The object was subsequently freed by thread 0x18A0, and the stack trace (return addresses) at the time was:
+182712A [System.pas][System][@FreeMem$qqrpv][4891]
+1828DB1 [System.pas][System][TObject.FreeInstance][17870]
+18D2250 [madExcept][InterceptClassDestroy$qqrp14System.TObject]
+1D97E38 [MPShellUtilities.pas][MPShellUtilities][TNamespace.Destroy][3720]
+1828EA7 [System.pas][System][TObject.Free][17933]
+1DCA840 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoFreeNode][4275]
+1D63793 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteNode][18245]
+1D632B4 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.DeleteChildren][18130]
+1D62844 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.Clear][17850]
+1DC8C37 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Clear][3551]
+1DC9691 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.Destroy][3850]
+
+The current thread ID is 0x18A0, and the stack trace (return addresses) leading to this error is:
+1DCC1A2 [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.DoShellExecute][4975]
+1DD6E56 [VirtualExplorerTree.pas][VirtualExplorerTree][TVirtualExplorerListview.DoShellExecute][9880]
+1D64F61 [VirtualTrees.pas][VirtualTrees][TBaseVirtualTree.GetFirstSelected][19011]
+1DD23ED [VirtualExplorerTree.pas][VirtualExplorerTree][TCustomVirtualExplorerTree.WMLButtonDblClk][7704]
+1A00509 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.WndProc][7480]
+1D13131 [VirtualTrees.Header.pas][VirtualTrees.Header][Header.TVTHeader.HandleMessage][1574]
+7727B586 [Unknown function at CallNextHookEx]
+1A04BA5 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.ControlAtPos][10168]
+1A04C16 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.IsControlMouseMsg][10184]
+77269A1B [Unknown function at GetWindowTextLengthA]
+1A05460 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.WndProc][10424]
+
+Current memory dump of 256 bytes starting at pointer address 7FDBB960:
+84 3C E4 01 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 83 D3 7B E7 00 00 00 00 E1 CD DB 7F
+„  <  ä  .  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  ƒ  Ó  {  ç  .  .  .  .  á  Í  Û  
+
+--------------------------------2023/7/14 11:03:05--------------------------------
+FastMM has detected an attempt to call a virtual method on a freed object. An access violation will now be raised in order to abort the current operation.
+
+Freed object class: TStartOrbForm
+
+Virtual method: Destroy
+
+Virtual method address: 17E1FA8
+
+The allocation number was: 17697
+
+The object was allocated by thread 0x378, and the stack trace (return addresses) at the time was:
+15070FA [System.pas][System][@GetMem$qqri][4843]
+1508D37 [System.pas][System][TObject.NewInstance][17861]
+1509472 [System.pas][System][@ClassCreate$qqrpvzc][19251]
+17E1B40 [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.Create][3820]
+1A0DD70 [NxTaskbarLib.dpr][NxTaskbarLib][ShowNxStartOrb$qqsv][298]
+1A0DD82 [NxTaskbarLib.dpr][NxTaskbarLib][ShowNxStartOrb$qqsv][299]
+689D48 [NxTaskbarExMain.pas][NxTaskbarExMain][TNxTaskbarExMainForm.TimerCheckTaskbarExistTimer][542]
+5F61A6 [Vcl.ExtCtrls.pas][Vcl.ExtCtrls][Extctrls.TTimer.Timer][3193]
+5F6088 [Vcl.ExtCtrls.pas][Vcl.ExtCtrls][Extctrls.TTimer.WndProc][3151]
+4F5B66 [System.Classes.pas][System.Classes][Classes.StdWndProc$qqsp6HWND__uiuiui][18175]
+75870E8B [Unknown function at AddClipboardFormatListener]
+
+The object was subsequently freed by thread 0x378, and the stack trace (return addresses) at the time was:
+1507116 [System.pas][System][@FreeMem$qqrpv][4891]
+1508D55 [System.pas][System][TObject.FreeInstance][17870]
+15B0F48 [madExcept][InterceptClassDestroy$qqrp14System.TObject]
+17E2116 [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.Destroy][3980]
+1A0DE12 [NxTaskbarLib.dpr][NxTaskbarLib][CloseNxStartOrb$qqsv][311]
+689C81 [NxTaskbarExMain.pas][NxTaskbarExMain][TNxTaskbarExMainForm.TimerCheckExplorerTimer][517]
+5F61A6 [Vcl.ExtCtrls.pas][Vcl.ExtCtrls][Extctrls.TTimer.Timer][3193]
+5F6088 [Vcl.ExtCtrls.pas][Vcl.ExtCtrls][Extctrls.TTimer.WndProc][3151]
+4F5B66 [System.Classes.pas][System.Classes][Classes.StdWndProc$qqsp6HWND__uiuiui][18175]
+75870E8B [Unknown function at AddClipboardFormatListener]
+75867E5A [Unknown function at GetClassLongW]
+
+The current thread ID is 0x378, and the stack trace (return addresses) leading to this error is:
+1A0DE12 [NxTaskbarLib.dpr][NxTaskbarLib][CloseNxStartOrb$qqsv][311]
+689C81 [NxTaskbarExMain.pas][NxTaskbarExMain][TNxTaskbarExMainForm.TimerCheckExplorerTimer][517]
+5F61A6 [Vcl.ExtCtrls.pas][Vcl.ExtCtrls][Extctrls.TTimer.Timer][3193]
+5F6088 [Vcl.ExtCtrls.pas][Vcl.ExtCtrls][Extctrls.TTimer.WndProc][3151]
+4F5B66 [System.Classes.pas][System.Classes][Classes.StdWndProc$qqsp6HWND__uiuiui][18175]
+75870E8B [Unknown function at AddClipboardFormatListener]
+75867E5A [Unknown function at GetClassLongW]
+77342AEC [ZwCallbackReturn]
+7586B356 [Unknown function at SendMessageTimeoutW]
+75867C6E [Unknown function at GetClassLongW]
+7586B8BA [PeekMessageW]
+
+Current memory dump of 256 bytes starting at pointer address 7FD10E30:
+84 8C A3 01 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80
+„  Œ  £  .  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €
+
+--------------------------------2023/7/25 16:33:12--------------------------------
+FastMM has detected an attempt to call a virtual method on a freed object. An access violation will now be raised in order to abort the current operation.
+
+Freed object class: TTaskbars
+
+Virtual method: Destroy
+
+Virtual method address: 1A7C950
+
+The allocation number was: 4654
+
+The object was allocated by thread 0x1324, and the stack trace (return addresses) at the time was:
+17870FA [System.pas][System][@GetMem$qqri][4843]
+1788D37 [System.pas][System][TObject.NewInstance][17861]
+1789472 [System.pas][System][@ClassCreate$qqrpvzc][19251]
+1788E1C [System.pas][System][TObject.Create][17920]
+2E19336 [GetRawStackTrace]
+1A7F012 [StartOrb.pas][StartOrb][TStartOrbForm.CreateParams][77]
+19622F7 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.CreateWnd][9708]
+7790AC09 [RtlSetLastWin32Error]
+2E19336 [GetRawStackTrace]
+17999FC [FastMM4.pas][FastMM4][FastFreeMem$qqrpv][5644]
+179B1DC [FastMM4.pas][FastMM4][DebugFreeMem$qqrpv][8893]
+
+The object was subsequently freed by thread 0x1324, and the stack trace (return addresses) at the time was:
+1787116 [System.pas][System][@FreeMem$qqrpv][4891]
+1788D55 [System.pas][System][TObject.FreeInstance][17870]
+1830F48 [madExcept][InterceptClassDestroy$qqrp14System.TObject]
+1A7C97D [Taskbar.pas][Taskbar][TTaskbars.Destroy][307]
+1788E4B [System.pas][System][TObject.Free][17933]
+1A7F51D [StartOrb.pas][StartOrb][TStartOrbForm.FormClose][147]
+1A62C41 [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.DoClose][4349]
+1A6827E [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.Close][7446]
+1A67011 [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.WMClose][6768]
+195E9E1 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.WndProc][7480]
+1963938 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.WndProc][10424]
+
+The current thread ID is 0x1324, and the stack trace (return addresses) leading to this error is:
+1788E4B [System.pas][System][TObject.Free][17933]
+1A7F9BA [StartOrb.pas][StartOrb][TStartOrbForm.FormDestroy][257]
+1A621CF [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.DoDestroy][3998]
+1A61FA3 [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.BeforeDestruction][3930]
+178951C [System.pas][System][@BeforeDestruction$qqrxp14System.TObjectzc][19334]
+1A61FB3 [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.Destroy][3939]
+1788E4B [System.pas][System][TObject.Free][17933]
+1A68141 [Vcl.Forms.pas][Vcl.Forms][Forms.TCustomForm.CMRelease][7388]
+195E9E1 [Vcl.Controls.pas][Vcl.Controls][Controls.TControl.WndProc][7480]
+75E26032 [GetSystemMetricsForDpi]
+1963938 [Vcl.Controls.pas][Vcl.Controls][Controls.TWinControl.WndProc][10424]
+
+Current memory dump of 256 bytes starting at pointer address 7FD21FC0:
+84 8C CB 01 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 C7 FC C2 E3 80 80 80 80
+80 80 80 80 80 80 80 80 00 00 00 00 21 31 D2 7F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+4E B2 00 00 FA 70 78 01 0F AD 78 01 40 AF 78 01 3D DB C8 01 BB E1 C8 01 98 E7 C8 01 86 B5 E2 75
+F3 25 E8 75 8D 4F 92 77 1C 10 DD 76 BA B8 E2 75 24 13 00 00 24 13 00 00 16 71 78 01 CC B1 78 01
+2C 99 7D 01 4E DB C8 01 BB E1 C8 01 98 E7 C8 01 86 B5 E2 75 F3 25 E8 75 8D 4F 92 77 1C 10 DD 76
+BA B8 E2 75 24 00 00 00 B0 04 02 00 9A B7 9C 33 84 8C CB 01 80 80 80 80 80 80 80 80 80 80 80 80
+80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 80 65 48 63 CC 00 00 00 00 20 F3 D1 7F
+00 00 00 00 00 00 00 00 90 AF 79 01 00 00 00 00 94 25 00 00 69 71 78 01 97 DA 78 01 3D 3C 88 01
+„  Œ  Ë  .  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  Ç  ü  Â  ã  €  €  €  €
+€  €  €  €  €  €  €  €  .  .  .  .  !  1  Ò    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+N  ²  .  .  ú  p  x  .  .  ­  x  .  @  ¯  x  .  =  Û  È  .  »  á  È  .  ˜  ç  È  .  †  µ  â  u
+ó  %  è  u    O  ’  w  .  .  Ý  v  º  ¸  â  u  $  .  .  .  $  .  .  .  .  q  x  .  Ì  ±  x  .
+,  ™  }  .  N  Û  È  .  »  á  È  .  ˜  ç  È  .  †  µ  â  u  ó  %  è  u    O  ’  w  .  .  Ý  v
+º  ¸  â  u  $  .  .  .  °  .  .  .  š  ·  œ  3  „  Œ  Ë  .  €  €  €  €  €  €  €  €  €  €  €  €
+€  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  €  e  H  c  Ì  .  .  .  .     ó  Ñ  
+.  .  .  .  .  .  .  .    ¯  y  .  .  .  .  .  ”  %  .  .  i  q  x  .  —  Ú  x  .  =  <  ˆ  .
