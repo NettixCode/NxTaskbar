@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/26 02:08:20.000.561,=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/16 15:57:27.000.780,=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/06/16 15:59:44.000.149,C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\PROJECT\D10_NXTASKBAR_DLL\libMain.pas</Transaction>
+    <Transaction>2023/06/16 15:59:44.000.149,C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\libMain.dfm</Transaction>
+    <Transaction>2023/06/16 15:59:54.000.724,C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\PROJECT\D10_NXTASKBAR_DLL\Lib.dproj</Transaction>
+    <Transaction>2023/06/19 09:59:35.000.985,D:\PROJECT\D10_NXTASKBAR_DLL\LibExecute.dproj=D:\PROJECT\D10_NXTASKBAR_DLL\Lib.dproj</Transaction>
+    <Transaction>2023/06/19 10:00:47.000.810,D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarEx.dproj=D:\PROJECT\D10_NXTASKBAR_DLL\LibExecute.dproj</Transaction>
+    <Transaction>2023/06/20 13:45:37.000.106,D:\PROJECT\D10_NXTASKBAR_DLL\libMain.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarExMain.dfm</Transaction>
+    <Transaction>2023/06/20 13:45:37.000.106,D:\PROJECT\D10_NXTASKBAR_DLL\libMain.pas=D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarExMain.pas</Transaction>
+    <Transaction>2023/07/08 14:03:56.000.954,D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarExMain.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\NxTaskbarExMain.pas</Transaction>
+    <Transaction>2023/07/08 14:03:56.000.954,D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarExMain.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\NxTaskbarExMain.dfm</Transaction>
+    <Transaction>2023/07/09 17:44:06.000.707,=D:\PROJECT\D10_NXTASKBAR_DLL\Untitled1.htm</Transaction>
+  </Transactions>
+</BorlandProject>

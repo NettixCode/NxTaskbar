@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{296D5785-D06C-49D7-ADBE-83609C7037F1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="NxTaskbarCfg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NxTaskbarEx.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NxTaskbarLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="NxTaskbarSm.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="NxTaskbarCfg">
+        <MSBuild Projects="NxTaskbarCfg.dproj"/>
+    </Target>
+    <Target Name="NxTaskbarCfg:Clean">
+        <MSBuild Projects="NxTaskbarCfg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NxTaskbarCfg:Make">
+        <MSBuild Projects="NxTaskbarCfg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NxTaskbarEx">
+        <MSBuild Projects="NxTaskbarEx.dproj"/>
+    </Target>
+    <Target Name="NxTaskbarEx:Clean">
+        <MSBuild Projects="NxTaskbarEx.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NxTaskbarEx:Make">
+        <MSBuild Projects="NxTaskbarEx.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NxTaskbarLib">
+        <MSBuild Projects="NxTaskbarLib.dproj"/>
+    </Target>
+    <Target Name="NxTaskbarLib:Clean">
+        <MSBuild Projects="NxTaskbarLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NxTaskbarLib:Make">
+        <MSBuild Projects="NxTaskbarLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NxTaskbarSm">
+        <MSBuild Projects="NxTaskbarSm.dproj"/>
+    </Target>
+    <Target Name="NxTaskbarSm:Clean">
+        <MSBuild Projects="NxTaskbarSm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NxTaskbarSm:Make">
+        <MSBuild Projects="NxTaskbarSm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="NxTaskbarCfg;NxTaskbarEx;NxTaskbarLib;NxTaskbarSm"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="NxTaskbarCfg:Clean;NxTaskbarEx:Clean;NxTaskbarLib:Clean;NxTaskbarSm:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="NxTaskbarCfg:Make;NxTaskbarEx:Make;NxTaskbarLib:Make;NxTaskbarSm:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

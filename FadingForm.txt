@@ -1,0 +1,162 @@
+unit FadingForm;
+
+interface
+
+
+{ After an Idea:
+Fade In / Out an About Box or any Modal Delphi Form
+http://delphi.about.com/od/formsdialogs/a/fadeinmodalform.htm
+~Zarko Gajic
+
+You will need two Units/forms:
+On a form (In this example, FormName=TAboutBox) :
+Drop a Ttimer,       name fadeTimerIn,    Interval = 1,    Enabled=False,  create Event:  OnTimer
+Drop another Ttimer, name CountDownTimer, Interval = 1000, Enabled=False,  create Event: OnTimer
+In this example; A panel, an icon and three labels, just to indicate countdown.
+
+From a Mainform,   (You will need this just for testing:)
+In Uses: FadingUnit (Unitname of unit containing then form TAboutBox);
+Drop a Button. In Button1Click:  TAboutBox.Execute;
+
+}
+
+
+uses LCLIntf, LCLType, LMessages, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
+  Buttons, ExtCtrls, DateUtils,  Dialogs;
+
+type
+  TFadeType = (ftIn, ftOut);
+
+  { TAboutBox }
+
+  TAboutBox = class(TForm)
+    Label1Text: TLabel;
+    Label2Text: TLabel;
+    LabelRestartIn: TLabel;
+    Panel1: TPanel;
+    ProgramIcon: TImage;
+    fadeTimerIn: TTimer;
+    CountDownTimer: TTimer;
+    procedure fadeTimerInTimer(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure CountDownTimerTimer(Sender: TObject);
+
+  private
+
+    fFadeType: TFadeType;
+    property FadeType : TFadeType read fFadeType write fFadeType;
+  public
+    class function Execute() : TModalResult;
+  end;
+var
+  StartCountDownTime,
+  LowValue,
+  TimerInterval,
+  temp : TTime;
+
+
+implementation
+{$R *.lfm}
+
+class function TAboutBox.Execute: TModalResult;
+begin
+  with TAboutBox.Create(nil) do
+  begin
+    try
+      result := ShowModal;
+    finally
+      Release;
+    end;
+  end;
+end;
+
+procedure TAboutBox.fadeTimerInTimer(Sender: TObject);
+const
+  FADE_IN_SPEED = 1;
+  FADE_OUT_SPEED = 2;
+var
+  newBlendValue : integer;
+begin
+  case FadeType of
+    ftIn:
+      begin
+        if AlphaBlendValue < 255 then
+        begin
+          AlphaBlendValue := FADE_IN_SPEED + AlphaBlendValue;
+        end
+        else
+        begin
+          fadeTimerIn.Enabled    := False;
+          Close;
+        end;
+      end;
+    ftOut:
+      begin
+        if AlphaBlendValue > 0 then
+        begin
+          newBlendValue := -1 * FADE_OUT_SPEED + AlphaBlendValue;
+          if newBlendValue >  0 then
+            AlphaBlendValue := newBlendValue
+          else
+            AlphaBlendValue := 0;
+        end
+        else
+        begin
+          fadeTimerIn.Enabled := false;
+          Close;
+        end;
+      end;
+  end;
+end;
+
+
+
+procedure TAboutBox.FormCreate(Sender: TObject);
+begin
+  AlphaBlend      := True;
+  AlphaBlendValue := 0;
+  fFadeType       := ftIn;
+  TimerInterval := EncodeTime(0, 0, 10, 0);         //CountDown seconds
+  LowValue      := EncodeTime(0, 0, 1, 0);          //CountDown to < LowValue
+  FadeTimerIn.Enabled    := True;
+end;
+
+procedure TAboutBox.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+                                                    //no close before we fade away
+  if FadeType = ftIn then
+  begin
+    //fFadeType := ftOut;     if no CountDown, start fade oute from here
+    AlphaBlendValue := 255;
+    StartCountDownTime     := Now;
+    CountDownTimer.Enabled := True;
+
+   // fadeTimerIn.Enabled := true;   if no CountDown, start fade oute from here
+    CanClose := false;
+
+  end
+  else
+  begin
+    CanClose := true;
+  end;
+end;
+
+procedure TAboutBox.CountDownTimerTimer(Sender: TObject);
+var Cmp : Integer;
+begin
+  Temp := StartCountDownTime-Now+TimerInterval;
+  LabelRestartIn.Caption := FormatDateTime('ss', temp);
+
+  Cmp:=CompareTime(temp, LowValue);
+  If Cmp<0 then
+  begin
+    CountDownTimer.Enabled := False;
+    fFadeType := ftOut;
+    fadeTimerIn.Enabled := true;
+  end;
+end;
+
+
+end.
+                  

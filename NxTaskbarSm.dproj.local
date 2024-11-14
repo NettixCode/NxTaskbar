@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.256,D:\PROJECT\D10STARTMENU\StartMenu.dproj=D:\PROJECT\Demos\Vcl Styles Color Hook Form (Demo App)\VCLStylesSample.dproj</Transaction>
+    <Transaction>2023/05/30 15:02:46.000.164,=D:\PROJECT\D10STARTMENU\Unit1.pas</Transaction>
+    <Transaction>2023/05/30 15:04:04.000.969,D:\PROJECT\D10STARTMENU\WinDialogs.pas=D:\PROJECT\D10STARTMENU\Unit1.pas</Transaction>
+    <Transaction>2023/07/11 21:25:39.000.845,D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarSm.dproj=D:\PROJECT\D10STARTMENU\StartMenu.dproj</Transaction>
+    <Transaction>2023/07/11 21:27:29.000.433,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu.pas=D:\PROJECT\D10STARTMENU\Main.pas</Transaction>
+    <Transaction>2023/07/11 21:27:29.000.433,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu.dfm=D:\PROJECT\D10STARTMENU\Main.dfm</Transaction>
+    <Transaction>2023/07/12 00:18:35.000.276,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu_Kali.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu.dfm</Transaction>
+    <Transaction>2023/07/12 00:18:35.000.276,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu_Kali.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu.pas</Transaction>
+    <Transaction>2023/07/15 23:17:14.000.437,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu_Kali.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu1.dfm</Transaction>
+    <Transaction>2023/07/15 23:17:14.000.437,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu_Kali.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu1.pas</Transaction>
+    <Transaction>2023/07/15 23:54:03.000.339,=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/07/15 23:54:19.000.021,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu2.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/07/15 23:54:19.000.021,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu2.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.dfm</Transaction>
+    <Transaction>2023/08/02 19:42:18.000.858,=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/08/02 19:43:59.000.701,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas</Transaction>
+    <Transaction>2023/08/02 19:43:59.000.701,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.dfm</Transaction>
+    <Transaction>2023/08/14 17:55:39.000.682,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas=</Transaction>
+    <Transaction>2023/08/14 17:56:08.000.129,=D:\PROJECT\D10_NXTASKBAR_DLL\Unit1.pas</Transaction>
+    <Transaction>2023/08/14 17:57:05.000.451,D:\PROJECT\D10_NXTASKBAR_DLL\Unit1.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.dfm</Transaction>
+    <Transaction>2023/08/14 17:57:05.000.451,D:\PROJECT\D10_NXTASKBAR_DLL\Unit1.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas</Transaction>
+    <Transaction>2023/08/14 18:08:15.000.193,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas=</Transaction>
+    <Transaction>2023/08/14 18:09:24.000.471,=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/08/14 18:09:44.000.988,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/08/14 18:09:44.000.988,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.dfm</Transaction>
+    <Transaction>2023/08/14 18:09:44.000.998,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.dfm</Transaction>
+    <Transaction>2023/08/14 18:09:44.000.998,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas</Transaction>
+    <Transaction>2023/08/14 18:10:08.000.906,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/08/14 18:10:08.000.906,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.dfm</Transaction>
+    <Transaction>2023/08/14 18:15:10.000.428,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas=</Transaction>
+    <Transaction>2023/08/14 18:15:26.000.731,=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/08/14 18:15:38.000.362,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.pas</Transaction>
+    <Transaction>2023/08/14 18:15:38.000.362,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\Unit1.dfm</Transaction>
+    <Transaction>2023/10/10 13:10:56.971,D:\PROJECT\D10_NXTASKBAR_DLL\Forms\StartMenu3.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

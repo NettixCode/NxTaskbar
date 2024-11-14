@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/06/14 12:45:46.000.223,=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/06/14 12:48:00.000.765,D:\PROJECT\DLLTEST\Main.dfm=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2023/06/14 12:48:00.000.765,D:\PROJECT\DLLTEST\Main.pas=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/06/14 12:49:06.000.025,D:\PROJECT\DLLTEST\NxTaskbarCfg.dproj=C:\Users\Administrator\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2023/06/15 11:10:30.000.990,=D:\PROJECT\DLLTEST\WindowsDarkMode.pas</Transaction>
+    <Transaction>2023/06/20 13:42:53.000.922,D:\PROJECT\D10_NXTASKBAR_DLL\Main.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarCfgMain.dfm</Transaction>
+    <Transaction>2023/06/20 13:42:53.000.922,D:\PROJECT\D10_NXTASKBAR_DLL\Main.pas=D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarCfgMain.pas</Transaction>
+    <Transaction>2023/07/08 14:03:26.000.758,D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarCfgMain.dfm=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\NxTaskbarCfgMain.dfm</Transaction>
+    <Transaction>2023/07/08 14:03:26.000.758,D:\PROJECT\D10_NXTASKBAR_DLL\NxTaskbarCfgMain.pas=D:\PROJECT\D10_NXTASKBAR_DLL\Forms\NxTaskbarCfgMain.pas</Transaction>
+  </Transactions>
+</BorlandProject>
